@@ -1,0 +1,108 @@
+TranslationUnit <line:4:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+ -FuncDef <line:4:1> 
+  |-FunctionDecl <line:4:5> main 'int ()'
+   -FuncBody <line:4:12> 
+     -CompoundStmt <line:4:12> 
+      |-DeclarStmt <line:6:2> 
+      |  -SimpleDeclar <line:6:2> 
+      |   |-InitDeclarator <line:6:7> 
+      |   |  -Decl <line:6:7> n1 'char'
+      |    -InitDeclarator <line:6:11> 
+      |      -Decl <line:6:11> n2 'char'
+      |-DeclarStmt <line:7:2> 
+      |  -SimpleDeclar <line:7:2> 
+      |    -InitDeclarator <line:7:7> 
+      |      -Decl <line:7:7> arr '[2 x char]'
+      |-ExprStmt <line:8:2> 
+      |  -CallExpr <line:8:2> 'int (ptr to const char, ...)', function declared on line: 0
+      |   |-IdExpr <line:8:2> printf, declared on line 0
+      |    -ArrToPtrExpr <line:0:0> 
+      |      -StringLiteral <line:8:9> "ahoj
+"
+      |-IfStmt <line:9:2> 
+      | |-Condition <line:9:5> 
+      | |  -BinaryExpr <line:9:5> '!='
+      | |   |-CallExpr <line:9:5> 'int (ptr to const char, ...)', function declared on line: 0
+      | |   | |-IdExpr <line:9:5> scanf, declared on line 0
+      | |   | |-ArrToPtrExpr <line:0:0> 
+      | |   | |  -StringLiteral <line:9:11> "%c"
+      | |   |  -UnaryExpr <line:9:17> '&'
+      | |   |    -IdExpr <line:9:18> n1, declared on line 6
+      | |    -IntLiteral <line:9:25> 1
+      |  -ReturnStmt <line:10:3> 
+      |    -IntLiteral <line:10:10> 1
+      |-ExprStmt <line:12:2> 
+      |  -CallExpr <line:12:2> 'int (ptr to char, ptr to const char, ...)', function declared on line: 0
+      |   |-IdExpr <line:12:2> sprintf, declared on line 0
+      |   |-ArrToPtrExpr <line:0:0> 
+      |   |  -IdExpr <line:12:10> arr, declared on line 7
+      |   |-ArrToPtrExpr <line:0:0> 
+      |   |  -StringLiteral <line:12:15> "%c"
+      |    -LValToRValExpr <line:12:2> 
+      |      -IdExpr <line:12:21> n1, declared on line 6
+      |-ExprStmt <line:14:2> 
+      |  -CallExpr <line:14:2> 'int (ptr to const char, ptr to const char, ...)', function declared on line: 0
+      |   |-IdExpr <line:14:2> sscanf, declared on line 0
+      |   |-ArrToPtrExpr <line:0:0> 
+      |   |  -IdExpr <line:14:9> arr, declared on line 7
+      |   |-ArrToPtrExpr <line:0:0> 
+      |   |  -StringLiteral <line:14:14> "%c"
+      |    -UnaryExpr <line:14:20> '&'
+      |      -IdExpr <line:14:21> n2, declared on line 6
+      |-IfStmt <line:15:2> 
+      | |-Condition <line:15:5> 
+      | |  -BinaryExpr <line:15:5> '!='
+      | |   |-LValToRValExpr <line:15:5> 
+      | |   |  -IdExpr <line:15:5> n1, declared on line 6
+      | |    -LValToRValExpr <line:15:5> 
+      | |      -IdExpr <line:15:11> n2, declared on line 6
+      |  -ReturnStmt <line:16:3> 
+      |    -IntLiteral <line:16:10> 2
+      |-DeclarStmt <line:18:2> 
+      |  -SimpleDeclar <line:18:2> 
+      |    -InitDeclarator <line:18:6> 
+      |     |-Decl <line:18:7> p 'ptr to int'
+      |      -CastExpr <line:18:11> 'ptr to int'
+      |        -CallExpr <line:18:18> 'ptr to void (int)', function declared on line: 0
+      |         |-IdExpr <line:18:18> malloc, declared on line 0
+      |          -IntLiteral <line:18:25> 1
+       -ExprStmt <line:19:2> 
+         -CallExpr <line:19:2> 'void (ptr to void)', function declared on line: 0
+          |-IdExpr <line:19:2> free, declared on line 0
+           -ImplicitTypeCastExpr <line:19:2> 'ptr to void'
+             -LValToRValExpr <line:19:2> 
+               -IdExpr <line:19:7> p, declared on line 18

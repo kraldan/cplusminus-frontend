@@ -1,0 +1,64 @@
+TranslationUnit <line:2:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+ -FuncDef <line:2:1> 
+  |-FunctionDecl <line:2:5> main 'int ()'
+   -FuncBody <line:2:12> 
+     -CompoundStmt <line:2:12> 
+      |-DeclarStmt <line:3:2> 
+      |  -SimpleDeclar <line:3:2> 
+      |   |-InitDeclarator <line:3:6> 
+      |   |  -Decl <line:3:6> i 'int'
+      |    -InitDeclarator <line:3:9> 
+      |     |-Decl <line:3:10> ni 'ptr to int'
+      |      -ImplicitTypeCastExpr <line:3:9> 'ptr to int'
+      |        -NullptrLiteral <line:3:15> 
+      |-IfStmt <line:4:2> 
+      | |-Condition <line:4:5> 
+      | |  -ImplicitTypeCastExpr <line:4:5> 'bool'
+      | |    -LValToRValExpr <line:4:5> 
+      | |      -IdExpr <line:4:5> ni, declared on line 3
+      | |-ReturnStmt <line:5:3> 
+      | |  -IntLiteral <line:5:10> 0
+      |  -IfStmt <line:6:7> 
+      |   |-Condition <line:6:10> 
+      |   |  -ImplicitTypeCastExpr <line:6:10> 'bool'
+      |   |    -UnaryExpr <line:6:10> '&'
+      |   |      -IdExpr <line:6:11> i, declared on line 3
+      |    -ReturnStmt <line:7:3> 
+      |      -IntLiteral <line:7:10> 42
+       -ReturnStmt <line:8:2> 
+         -UnaryExpr <line:8:9> '-'
+           -IntLiteral <line:8:10> 1

@@ -1,0 +1,55 @@
+TranslationUnit <line:2:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:2:1> 
+|  -InitDeclarator <line:2:5> 
+|    -FunctionDecl <line:2:5> scanf 'int (ptr to const char, ...)', first declaration: line 0
+|      -Param <line:2:11> 
+|        -Decl <line:2:24> fmt 'ptr to const char'
+ -FuncDef <line:4:1> 
+  |-FunctionDecl <line:4:5> main 'int ()'
+   -FuncBody <line:4:12> 
+     -CompoundStmt <line:4:12> 
+      |-DeclarStmt <line:5:2> 
+      |  -SimpleDeclar <line:5:2> 
+      |    -InitDeclarator <line:5:6> 
+      |      -Decl <line:5:6> a 'int'
+       -ReturnStmt <line:6:2> 
+         -CallExpr <line:6:9> 'int (ptr to const char, ...)', function declared on line: 0
+          |-IdExpr <line:6:9> scanf, declared on line 0
+          |-ArrToPtrExpr <line:0:0> 
+          |  -StringLiteral <line:6:15> "%d"
+           -UnaryExpr <line:6:21> '&'
+             -IdExpr <line:6:22> a, declared on line 5

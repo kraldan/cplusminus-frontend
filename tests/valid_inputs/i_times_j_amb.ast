@@ -1,0 +1,72 @@
+TranslationUnit <line:3:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-FuncDef <line:3:1> 
+| |-FunctionDecl <line:3:6> mul 'void (int, int)'
+| | |-Param <line:3:10> 
+| | |  -Decl <line:3:14> i 'int'
+| |  -Param <line:3:17> 
+| |    -Decl <line:3:21> j 'int'
+|  -FuncBody <line:3:24> 
+|    -CompoundStmt <line:3:24> 
+|      -ExprStmt <line:4:2> 
+|        -BinaryExpr <line:4:2> '*'
+|         |-LValToRValExpr <line:4:2> 
+|         |  -IdExpr <line:4:2> i, declared on line 3
+|          -LValToRValExpr <line:4:2> 
+|            -IdExpr <line:4:4> j, declared on line 3
+|-ClassDef <line:7:1> struct 'i'
+|  -MemberSpecification <line:8:2> 
+|    -MemberDeclaratorList <line:8:7> 
+|      -Decl <line:8:7> c 'char'
+|-EmptyDeclaration <line:9:2> 
+|-FuncDef <line:11:1> 
+| |-FunctionDecl <line:11:6> f 'void ()'
+|  -FuncBody <line:11:10> 
+|    -CompoundStmt <line:11:10> 
+|     |-DeclarStmt <line:12:2> 
+|     |  -SimpleDeclar <line:12:2> 
+|     |    -InitDeclarator <line:12:4> 
+|     |      -Decl <line:12:6> j 'ptr to i'
+|      -ExprStmt <line:13:2> 
+|        -AssignmentExpr <line:13:2> '=' lhs_type='char'
+|         |-MemberAccessExpr <line:13:2> ->c
+|         |  -LValToRValExpr <line:13:2> 
+|         |    -IdExpr <line:13:2> j, declared on line 12
+|          -CharLiteral <line:13:9> 'h'
+ -FuncDef <line:16:1> 
+  |-FunctionDecl <line:16:5> main 'int ()'
+   -FuncBody <line:16:12> 
+     -CompoundStmt <line:16:12> 

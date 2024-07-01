@@ -1,0 +1,119 @@
+TranslationUnit <line:3:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-FuncDef <line:3:1> 
+| |-FunctionDecl <line:3:5> global 'int ()'
+|  -FuncBody <line:3:14> 
+|    -CompoundStmt <line:3:14> 
+|      -ReturnStmt <line:4:2> 
+|        -IntLiteral <line:4:9> 1
+|-FuncDef <line:8:1> 
+| |-FunctionDecl <line:8:5> implicit 'int ()'
+|  -FuncBody <line:8:16> 
+|    -CompoundStmt <line:8:16> 
+|      -ReturnStmt <line:9:2> 
+|        -UnaryExpr <line:9:9> '-'
+|          -IntLiteral <line:9:10> 10
+|-ClassDef <line:12:1> struct 'S'
+|  -MemberSpecification <line:13:2> 
+|   |-MemberDeclaratorList <line:13:6> 
+|   |  -Decl <line:13:6> a 'int'
+|   |-FuncDef <line:14:2> 
+|   | |-FunctionDecl <line:14:2> S 'void (const ptr to S)'
+|   | |  -Param <line:14:2> 
+|   | |    -Decl <line:14:2> this 'const ptr to S'
+|   |  -FuncBody <line:14:6> 
+|   |    -CompoundStmt <line:14:6> 
+|   |      -ExprStmt <line:15:3> 
+|   |        -AssignmentExpr <line:15:3> '=' lhs_type='int'
+|   |         |-MemberAccessExpr <line:15:3> ->a
+|   |         |  -ImplicitThisExpr <line:15:3> 
+|   |          -IntLiteral <line:15:7> 2
+|   |-FuncDef <line:18:2> 
+|   | |-FunctionDecl <line:18:6> implicit 'int (const ptr to S)'
+|   | |  -Param <line:18:6> 
+|   | |    -Decl <line:18:6> this 'const ptr to S'
+|   |  -FuncBody <line:18:17> 
+|   |    -CompoundStmt <line:18:17> 
+|   |      -ReturnStmt <line:18:18> 
+|   |        -IntLiteral <line:18:25> 4
+|   |-FuncDef <line:19:2> 
+|   | |-FunctionDecl <line:19:6> explicit_ 'int (const ptr to S)'
+|   | |  -Param <line:19:6> 
+|   | |    -Decl <line:19:6> this 'const ptr to S'
+|   |  -FuncBody <line:19:18> 
+|   |    -CompoundStmt <line:19:18> 
+|   |      -ReturnStmt <line:19:19> 
+|   |        -IntLiteral <line:19:26> 8
+|    -FuncDef <line:20:2> 
+|     |-FunctionDecl <line:20:6> foo 'int (const ptr to S)'
+|     |  -Param <line:20:6> 
+|     |    -Decl <line:20:6> this 'const ptr to S'
+|      -FuncBody <line:20:12> 
+|        -CompoundStmt <line:20:12> 
+|         |-DeclarStmt <line:21:3> 
+|         |  -SimpleDeclar <line:21:3> 
+|         |    -InitDeclarator <line:21:5> 
+|         |     |-Decl <line:21:5> s 'S'
+|         |      -CallExpr <line:21:9> ctor call 'void (const ptr to S)', function declared on line: 14
+|         |        -IdExpr <line:21:9> S, declared on line 14
+|          -ReturnStmt <line:22:3> 
+|            -BinaryExpr <line:22:10> '+'
+|             |-BinaryExpr <line:22:10> '+'
+|             | |-BinaryExpr <line:22:10> '+'
+|             | | |-CallExpr <line:22:10> 'int ()', function declared on line: 3
+|             | | |  -IdExpr <line:22:10> global, declared on line 3
+|             | |  -LValToRValExpr <line:22:10> 
+|             | |    -MemberAccessExpr <line:22:21> .a
+|             | |      -IdExpr <line:22:21> s, declared on line 21
+|             |  -CallExpr <line:22:27> 'int (const ptr to S)', function declared on line: 18
+|             |    -MemberAccessExpr <line:22:27> ->implicit
+|             |      -ImplicitThisExpr <line:22:27> 
+|              -CallExpr <line:22:40> 'int (const ptr to S)', function declared on line: 19
+|                -MemberAccessExpr <line:22:40> ->explicit_
+|                  -ThisExpr <line:22:40> 
+|-EmptyDeclaration <line:24:2> 
+ -FuncDef <line:26:1> 
+  |-FunctionDecl <line:26:5> main 'int ()'
+   -FuncBody <line:26:12> 
+     -CompoundStmt <line:26:12> 
+      |-DeclarStmt <line:27:2> 
+      |  -SimpleDeclar <line:27:2> 
+      |    -InitDeclarator <line:27:4> 
+      |      -Decl <line:27:4> s 'S'
+       -ReturnStmt <line:28:2> 
+         -CallExpr <line:28:9> 'int (const ptr to S)', function declared on line: 20
+           -MemberAccessExpr <line:28:9> .foo
+             -IdExpr <line:28:9> s, declared on line 27

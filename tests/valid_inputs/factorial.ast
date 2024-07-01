@@ -1,0 +1,78 @@
+TranslationUnit <line:1:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-FuncDef <line:1:1> 
+| |-FunctionDecl <line:1:5> fact 'int (const int)'
+| |  -Param <line:1:10> 
+| |    -Decl <line:1:20> n 'const int'
+|  -FuncBody <line:1:23> 
+|    -CompoundStmt <line:1:23> 
+|     |-DeclarStmt <line:2:5> 
+|     |  -SimpleDeclar <line:2:5> 
+|     |    -InitDeclarator <line:2:9> 
+|     |     |-Decl <line:2:9> res 'int'
+|     |      -IntLiteral <line:2:15> 1
+|     |-ForStmt <line:3:5> 
+|     | |-SimpleDeclar <line:3:9> 
+|     | |  -InitDeclarator <line:3:13> 
+|     | |   |-Decl <line:3:13> i 'int'
+|     | |    -IntLiteral <line:3:17> 1
+|     | |-Condition <line:3:20> 
+|     | |  -BinaryExpr <line:3:20> '<='
+|     | |   |-LValToRValExpr <line:3:20> 
+|     | |   |  -IdExpr <line:3:20> i, declared on line 3
+|     | |    -LValToRValExpr <line:3:20> 
+|     | |      -IdExpr <line:3:25> n, declared on line 1
+|     | |-UnaryExpr <line:3:28> '++'
+|     | |  -IdExpr <line:3:30> i, declared on line 3
+|     |  -ExprStmt <line:4:9> 
+|     |    -AssignmentExpr <line:4:9> '=' lhs_type='int'
+|     |     |-IdExpr <line:4:9> res, declared on line 2
+|     |      -BinaryExpr <line:4:15> '*'
+|     |       |-LValToRValExpr <line:4:15> 
+|     |       |  -IdExpr <line:4:15> i, declared on line 3
+|     |        -LValToRValExpr <line:4:15> 
+|     |          -IdExpr <line:4:19> res, declared on line 2
+|      -ReturnStmt <line:5:5> 
+|        -LValToRValExpr <line:5:5> 
+|          -IdExpr <line:5:12> res, declared on line 2
+ -FuncDef <line:8:1> 
+  |-FunctionDecl <line:8:5> main 'int ()'
+   -FuncBody <line:8:12> 
+     -CompoundStmt <line:8:12> 
+       -ReturnStmt <line:9:2> 
+         -CallExpr <line:9:9> 'int (const int)', function declared on line: 1
+          |-IdExpr <line:9:9> fact, declared on line 1
+           -IntLiteral <line:9:14> 4

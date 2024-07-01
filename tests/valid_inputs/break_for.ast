@@ -1,0 +1,72 @@
+TranslationUnit <line:2:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+ -FuncDef <line:2:1> 
+  |-FunctionDecl <line:2:5> main 'int ()'
+   -FuncBody <line:2:12> 
+     -CompoundStmt <line:2:12> 
+      |-DeclarStmt <line:3:2> 
+      |  -SimpleDeclar <line:3:2> 
+      |    -InitDeclarator <line:3:6> 
+      |     |-Decl <line:3:6> sum 'int'
+      |      -IntLiteral <line:3:12> 0
+      |-ForStmt <line:4:2> 
+      | |-SimpleDeclar <line:4:6> 
+      | |  -InitDeclarator <line:4:10> 
+      | |   |-Decl <line:4:10> i 'int'
+      | |    -IntLiteral <line:4:14> 0
+      | |-Condition <line:4:17> 
+      | |  -BinaryExpr <line:4:17> '<'
+      | |   |-LValToRValExpr <line:4:17> 
+      | |   |  -IdExpr <line:4:17> i, declared on line 4
+      | |    -IntLiteral <line:4:21> 10
+      | |-PostIncrExpr <line:4:25> '++'
+      | |  -IdExpr <line:4:25> i, declared on line 4
+      |  -CompoundStmt <line:4:30> 
+      |   |-IfStmt <line:5:3> 
+      |   | |-Condition <line:5:6> 
+      |   | |  -BinaryExpr <line:5:6> '=='
+      |   | |   |-LValToRValExpr <line:5:6> 
+      |   | |   |  -IdExpr <line:5:6> i, declared on line 4
+      |   | |    -IntLiteral <line:5:11> 4
+      |   |  -BreakStmt <line:6:4> break level: 1
+      |    -ExprStmt <line:7:3> 
+      |      -AssignmentExpr <line:7:3> '+=' lhs_type='int'
+      |       |-IdExpr <line:7:3> sum, declared on line 3
+      |        -LValToRValExpr <line:7:3> 
+      |          -IdExpr <line:7:10> i, declared on line 4
+       -ReturnStmt <line:9:2> 
+         -LValToRValExpr <line:9:2> 
+           -IdExpr <line:9:9> sum, declared on line 3

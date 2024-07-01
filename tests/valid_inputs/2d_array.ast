@@ -1,0 +1,123 @@
+TranslationUnit <line:4:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+ -FuncDef <line:4:1> 
+  |-FunctionDecl <line:4:5> main 'int ()'
+   -FuncBody <line:4:12> 
+     -CompoundStmt <line:4:12> 
+      |-DeclarStmt <line:5:2> 
+      |  -SimpleDeclar <line:5:2> 
+      |    -InitDeclarator <line:5:6> 
+      |      -Decl <line:5:6> m '[2 x [2 x int]]'
+      |-ForStmt <line:6:2> 
+      | |-SimpleDeclar <line:6:6> 
+      | |  -InitDeclarator <line:6:10> 
+      | |   |-Decl <line:6:10> i 'int'
+      | |    -IntLiteral <line:6:14> 0
+      | |-Condition <line:6:17> 
+      | |  -BinaryExpr <line:6:17> '<'
+      | |   |-LValToRValExpr <line:6:17> 
+      | |   |  -IdExpr <line:6:17> i, declared on line 6
+      | |    -IntLiteral <line:6:21> 4
+      | |-PostIncrExpr <line:6:24> '++'
+      | |  -IdExpr <line:6:24> i, declared on line 6
+      |  -CompoundStmt <line:6:29> 
+      |   |-DeclarStmt <line:8:3> 
+      |   |  -SimpleDeclar <line:8:3> 
+      |   |    -InitDeclarator <line:8:7> 
+      |   |     |-Decl <line:8:8> loc 'ptr to int'
+      |   |      -UnaryExpr <line:8:14> '&'
+      |   |        -SubscriptExpr <line:8:15> 
+      |   |         |-ArrToPtrExpr <line:0:0> 
+      |   |         |  -SubscriptExpr <line:8:15> 
+      |   |         |   |-ArrToPtrExpr <line:0:0> 
+      |   |         |   |  -IdExpr <line:8:15> m, declared on line 5
+      |   |         |    -BinaryExpr <line:8:17> '/'
+      |   |         |     |-LValToRValExpr <line:8:17> 
+      |   |         |     |  -IdExpr <line:8:17> i, declared on line 6
+      |   |         |      -IntLiteral <line:8:21> 2
+      |   |          -BinaryExpr <line:8:24> '%'
+      |   |           |-LValToRValExpr <line:8:24> 
+      |   |           |  -IdExpr <line:8:24> i, declared on line 6
+      |   |            -IntLiteral <line:8:28> 2
+      |    -ExprStmt <line:9:3> 
+      |      -CallExpr <line:9:3> 'int (ptr to const char, ...)', function declared on line: 0
+      |       |-IdExpr <line:9:3> scanf, declared on line 0
+      |       |-ArrToPtrExpr <line:0:0> 
+      |       |  -StringLiteral <line:9:9> "%d"
+      |        -LValToRValExpr <line:9:3> 
+      |          -IdExpr <line:9:15> loc, declared on line 8
+      |-DeclarStmt <line:11:2> 
+      |  -SimpleDeclar <line:11:2> 
+      |    -InitDeclarator <line:11:6> 
+      |     |-Decl <line:11:6> det 'int'
+      |      -BinaryExpr <line:11:12> '-'
+      |       |-BinaryExpr <line:11:12> '*'
+      |       | |-LValToRValExpr <line:11:12> 
+      |       | |  -SubscriptExpr <line:11:12> 
+      |       | |   |-ArrToPtrExpr <line:0:0> 
+      |       | |   |  -SubscriptExpr <line:11:12> 
+      |       | |   |   |-ArrToPtrExpr <line:0:0> 
+      |       | |   |   |  -IdExpr <line:11:12> m, declared on line 5
+      |       | |   |    -IntLiteral <line:11:14> 0
+      |       | |    -IntLiteral <line:11:17> 0
+      |       |  -LValToRValExpr <line:11:12> 
+      |       |    -SubscriptExpr <line:11:22> 
+      |       |     |-ArrToPtrExpr <line:0:0> 
+      |       |     |  -SubscriptExpr <line:11:22> 
+      |       |     |   |-ArrToPtrExpr <line:0:0> 
+      |       |     |   |  -IdExpr <line:11:22> m, declared on line 5
+      |       |     |    -IntLiteral <line:11:24> 1
+      |       |      -IntLiteral <line:11:27> 1
+      |        -BinaryExpr <line:11:32> '*'
+      |         |-LValToRValExpr <line:11:32> 
+      |         |  -SubscriptExpr <line:11:32> 
+      |         |   |-ArrToPtrExpr <line:0:0> 
+      |         |   |  -SubscriptExpr <line:11:32> 
+      |         |   |   |-ArrToPtrExpr <line:0:0> 
+      |         |   |   |  -IdExpr <line:11:32> m, declared on line 5
+      |         |   |    -IntLiteral <line:11:34> 0
+      |         |    -IntLiteral <line:11:37> 1
+      |          -LValToRValExpr <line:11:32> 
+      |            -SubscriptExpr <line:11:42> 
+      |             |-ArrToPtrExpr <line:0:0> 
+      |             |  -SubscriptExpr <line:11:42> 
+      |             |   |-ArrToPtrExpr <line:0:0> 
+      |             |   |  -IdExpr <line:11:42> m, declared on line 5
+      |             |    -IntLiteral <line:11:44> 1
+      |              -IntLiteral <line:11:47> 0
+       -ReturnStmt <line:12:2> 
+         -LValToRValExpr <line:12:2> 
+           -IdExpr <line:12:9> det, declared on line 11

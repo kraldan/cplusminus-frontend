@@ -1,0 +1,89 @@
+TranslationUnit <line:2:1> 
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> printf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> scanf 'int (ptr to const char, ...)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> malloc 'ptr to void (int)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> bytes 'int'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> free 'void (ptr to void)'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> ptr 'ptr to void'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sprintf 'int (ptr to char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> dest 'ptr to char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-SimpleDeclar <line:0:0> 
+|  -InitDeclarator <line:0:0> 
+|    -FunctionDecl <line:0:0> sscanf 'int (ptr to const char, ptr to const char, ...)'
+|     |-Param <line:0:0> 
+|     |  -Decl <line:0:0> src 'ptr to const char'
+|      -Param <line:0:0> 
+|        -Decl <line:0:0> format 'ptr to const char'
+|-FuncDef <line:2:1> 
+| |-FunctionDecl <line:2:5> foo 'int (ptr to int, ptr to const int)'
+| | |-Param <line:2:9> 
+| | |  -Decl <line:2:15> p1 'ptr to int'
+| |  -Param <line:2:19> 
+| |    -Decl <line:2:31> p2 'ptr to const int'
+|  -FuncBody <line:2:35> 
+|    -CompoundStmt <line:2:35> 
+|      -ReturnStmt <line:3:2> 
+|        -IntLiteral <line:3:9> 2
+|-FuncDef <line:5:1> 
+| |-FunctionDecl <line:5:5> foo 'int (ptr to const int, ptr to int)'
+| | |-Param <line:5:9> 
+| | |  -Decl <line:5:21> p1 'ptr to const int'
+| |  -Param <line:5:25> 
+| |    -Decl <line:5:31> p2 'ptr to int'
+|  -FuncBody <line:5:35> 
+|    -CompoundStmt <line:5:35> 
+|      -ReturnStmt <line:6:2> 
+|        -IntLiteral <line:6:9> 40
+ -FuncDef <line:8:1> 
+  |-FunctionDecl <line:8:5> main 'int ()'
+   -FuncBody <line:8:12> 
+     -CompoundStmt <line:8:12> 
+      |-DeclarStmt <line:9:2> 
+      |  -SimpleDeclar <line:9:2> 
+      |    -InitDeclarator <line:9:6> 
+      |      -Decl <line:9:6> i 'int'
+      |-DeclarStmt <line:10:2> 
+      |  -SimpleDeclar <line:10:2> 
+      |    -InitDeclarator <line:10:6> 
+      |     |-Decl <line:10:8> p 'ptr to int'
+      |      -UnaryExpr <line:10:12> '&'
+      |        -IdExpr <line:10:13> i, declared on line 9
+      |-DeclarStmt <line:11:2> 
+      |  -SimpleDeclar <line:11:2> 
+      |    -InitDeclarator <line:11:12> 
+      |     |-Decl <line:11:14> cp 'ptr to const int'
+      |      -UnaryExpr <line:11:19> '&'
+      |        -IdExpr <line:11:20> i, declared on line 9
+       -ReturnStmt <line:12:2> 
+         -BinaryExpr <line:12:9> '+'
+          |-CallExpr <line:12:9> 'int (ptr to int, ptr to const int)', function declared on line: 2
+          | |-IdExpr <line:12:9> foo, declared on line 2
+          | |-LValToRValExpr <line:12:9> 
+          | |  -IdExpr <line:12:13> p, declared on line 10
+          |  -LValToRValExpr <line:12:9> 
+          |    -IdExpr <line:12:16> cp, declared on line 11
+           -CallExpr <line:12:22> 'int (ptr to const int, ptr to int)', function declared on line: 5
+            |-IdExpr <line:12:22> foo, declared on line 5
+            |-LValToRValExpr <line:12:22> 
+            |  -IdExpr <line:12:26> cp, declared on line 11
+             -LValToRValExpr <line:12:22> 
+               -IdExpr <line:12:30> p, declared on line 10
