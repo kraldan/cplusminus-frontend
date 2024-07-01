@@ -1,0 +1,32 @@
+image: alpine:3.19
+
+on: push
+
+.build:
+  stage: build
+  before_script:
+    - apk add cmake wget g++ clang14 clang compiler-rt make openjdk17-jre llvm14-dev llvm14-static boost-dev
+    - ci/build-antlr4.sh
+
+  script:
+    - mkdir build && cd build
+    - cmake .. -DCLANG_EXECUTABLE=/usr/bin/clang-14
+    - make -j$(nproc)
+    - ctest -j$(nproc) --output-on-failure
+
+build:gcc:
+  extends: .build
+  variables:
+    ANTLR4_JAR_LOCATION: /tmp/antlr/antlr-4.13.1-complete.jar
+    CC: gcc
+    CXX: g++
+    CXXFLAGS: "-g -O2"
+
+build:clang:
+  extends: .build
+  variables:
+    ANTLR4_JAR_LOCATION: /tmp/antlr/antlr-4.13.1-complete.jar
+    CC: clang
+    CXX: clang++
+    CXXFLAGS: "-g -fsanitize=address,undefined"
+    LDFLAGS: "-fsanitize=address,undefined"
